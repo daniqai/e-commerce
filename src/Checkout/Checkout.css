@@ -1,0 +1,85 @@
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+    height: 100vh; /* Full height of the viewport */
+  }
+  
+  .checkout-page {
+    max-width: 600px; /* Limit the width of the checkout page */
+    margin: 0 auto; /* Center align the content */
+    padding: 20px;
+    background-color: rgba(248, 249, 250, 0.9); /* Light background color with some transparency */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensure proper stacking context */
+    z-index: 1; /* Bring the content above the background */
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .empty-cart-message {
+    text-align: center;
+    color: #dc3545; /* Red color for warning */
+  }
+  
+  .cart-items {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .item-price {
+    font-weight: bold; /* Bold for price */
+  }
+  
+  .order-summary {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e9ecef; /* Light grey background */
+    border-radius: 5px;
+  }
+  
+  .payment-method {
+    margin-top: 20px;
+  }
+  
+  .payment-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .payment-option input {
+    margin-right: 10px; /* Spacing between radio button and label */
+  }
+  
+  .place-order-btn {
+    display: block;
+    width: 100%; /* Full width button */
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Blue button */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .place-order-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
