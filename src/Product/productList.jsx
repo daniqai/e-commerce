@@ -105,6 +105,9 @@ const ProductList = () => {
               <div className="product-info">
                 <h3>{product.name}</h3>
                 <p>
+                 {product.description}
+                </p>
+                <p>
                   Original Price: <span className="price">${product.originalPrice}</span>
                 </p>
                 <p>
@@ -112,6 +115,15 @@ const ProductList = () => {
                 </p>
                 <p>
                   Selling Price: <span className="price">${product.sellingPrice}</span>
+                </p>
+                <p>
+                Quantity: <span className="price">${product.quantity}</span>
+                </p>
+                <p>
+                UOM : <span className="price">${product.uom}</span>
+                </p>
+                <p>
+                HSN Code: <span className="price">${product.hsnCode}</span>
                 </p>
                 <button className="add-to-cart-btn" onClick={() => addToCart(product)}>
                   Add to Cart

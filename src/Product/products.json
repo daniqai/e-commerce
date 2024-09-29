@@ -1,51 +1,51 @@
 [
     {
       "id": "1",
-      "name": "Shoe",
-      "description": "This is the description for Product 1",
-      "image": "https://th.bing.com/th/id/OIP.tAZtpLwas9yqBLsTpL9-5QHaEK?w=312&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+      "name": "CBD Oil",
+      "description": "6000mg CBD Oil Tincture1",
+      "image": "https://www.zzzone.co.uk/wp-content/uploads/2021/05/Creative-Product-Photography-2.jpg",
       "originalPrice": 100,
       "discountPrice": 80,
       "sellingPrice": 90,
-      "quantity": 10,
-      "uom": "kg",
+      "quantity": 1,
+      "uom": "ml",
       "hsnCode": "123456"
     },
     {
       "id": "2",
-      "name": "T-Shirt",
-      "description": "This is the description for Product 2",
-      "image": "https://th.bing.com/th/id/OIP.SZFufwcZO_gs8vmF81xCjwHaI4?w=171&h=205&c=7&r=0&o=5&dpr=1.3&pid=1.7",
-      "originalPrice": 200,
-      "discountPrice": 150,
-      "sellingPrice": 170,
-      "quantity": 5,
-      "uom": "pcs",
-      "hsnCode": "654321"
+      "name": "Nail Polish",
+      "description": "Super Gloss Nail Polish - 10 ml - Shade - SG56",
+      "image": "https://th.bing.com/th/id/OIP.dcLtZnQtLx1m4ZZQNSlOnQHaH3?rs=1&pid=ImgDetMain",
+      "originalPrice": 230,
+      "discountPrice": 180,
+      "sellingPrice": 110,
+      "quantity": 1,
+      "uom": "ml",
+      "hsnCode": "876998"
     },
     {
         "id": "3",
-        "name": "Air Fryer",
-        "description": "This is the description for Product 3",
-        "image": "https://th.bing.com/th/id/OIP.Jz982G7KLAOi-halMEgPLwHaHa?w=197&h=197&c=7&r=0&o=5&dpr=1.3&pid=1.7",
-        "originalPrice": 200,
-        "discountPrice": 150,
-        "sellingPrice": 170,
-        "quantity": 5,
-        "uom": "pcs",
-        "hsnCode": "654321"
+        "name": "Face Serum",
+        "description": "Gold Elements Mega Serum 24k 300ml",
+        "image": "https://i.pinimg.com/originals/25/8a/17/258a17408a456b7d9bf82067db336a60.png",
+        "originalPrice": 800,
+        "discountPrice": 650,
+        "sellingPrice": 570,
+        "quantity": 1,
+        "uom": "ml",
+        "hsnCode": "7698"
       },
       {
         "id": "4",
         "name": "Foundation",
-        "description": "This is the description for Product 4",
+        "description": "New York Fit Me Matte + Poreless Liquid Foundation 30 ml - Soft Tan4",
         "image": "https://th.bing.com/th/id/OIP.8Xpy_xKpqb7o33RRs-L-WAHaHa?w=195&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7",
-        "originalPrice": 200,
-        "discountPrice": 150,
-        "sellingPrice": 170,
+        "originalPrice": 400,
+        "discountPrice": 250,
+        "sellingPrice": 180,
         "quantity": 5,
-        "uom": "pcs",
-        "hsnCode": "654321"
+        "uom": "ml",
+        "hsnCode": "654871"
       }
   ]
   
