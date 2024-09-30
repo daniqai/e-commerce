@@ -91,6 +91,10 @@ const ProductList = () => {
         <button onClick={handleSignOut} className="signout-btn">
           Sign Out
         </button>
+        {/* Add Your Orders Button */}
+        <button onClick={() => navigate('/orders')} className="orders-btn">
+          Your Orders
+        </button>
       </div>
 
       <div className={`products ${viewMode}`}>
@@ -104,9 +108,7 @@ const ProductList = () => {
               />
               <div className="product-info">
                 <h3>{product.name}</h3>
-                <p>
-                 {product.description}
-                </p>
+                <p>{product.description}</p>
                 <p>
                   Original Price: <span className="price">${product.originalPrice}</span>
                 </p>
@@ -117,13 +119,13 @@ const ProductList = () => {
                   Selling Price: <span className="price">${product.sellingPrice}</span>
                 </p>
                 <p>
-                Quantity: <span className="price">${product.quantity}</span>
+                  Quantity: <span className="price">${product.quantity}</span>
                 </p>
                 <p>
-                UOM : <span className="price">${product.uom}</span>
+                  UOM : <span className="price">${product.uom}</span>
                 </p>
                 <p>
-                HSN Code: <span className="price">${product.hsnCode}</span>
+                  HSN Code: <span className="price">${product.hsnCode}</span>
                 </p>
                 <button className="add-to-cart-btn" onClick={() => addToCart(product)}>
                   Add to Cart
@@ -137,32 +139,30 @@ const ProductList = () => {
       </div>
 
       {/* Cart Preview */}
-     {/* Cart Preview */}
-<div className="cart-preview">
-  <h3>Shopping Cart</h3>
-  {cart.length === 0 ? (
-    <p>The cart is empty.</p>
-  ) : (
-    <>
-      <ul>
-        {cart.map((item) => (
-          <li key={item.id} className="cart-item">
-            <div className="cart-item-details">
-              {item.name} (x{item.quantity}) - ${item.sellingPrice * item.quantity}
-            </div>
-            <button className="remove-btn" onClick={() => removeFromCart(item.id)}>
-              Remove
+      <div className="cart-preview">
+        <h3>Shopping Cart</h3>
+        {cart.length === 0 ? (
+          <p>The cart is empty.</p>
+        ) : (
+          <>
+            <ul>
+              {cart.map((item) => (
+                <li key={item.id} className="cart-item">
+                  <div className="cart-item-details">
+                    {item.name} (x{item.quantity}) - ${item.sellingPrice * item.quantity}
+                  </div>
+                  <button className="remove-btn" onClick={() => removeFromCart(item.id)}>
+                    Remove
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <button className="checkout-btn" onClick={() => navigate('/checkout')}>
+              Proceed to Checkout
             </button>
-          </li>
-        ))}
-      </ul>
-      <button className="checkout-btn" onClick={() => navigate('/checkout')}>
-        Proceed to Checkout
-      </button>
-    </>
-  )}
-</div>
-
+          </>
+        )}
+      </div>
     </div>
   );
 };

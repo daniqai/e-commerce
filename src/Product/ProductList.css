@@ -139,29 +139,38 @@
   }
   
   .profile-menu {
-    position: absolute; /* Position menu absolutely */
-    top: 50px; /* Adjust this value based on your layout */
-    right: 20px; /* Align to the right */
-    background-color: white; /* White background for menu */
-    border: 1px solid #ccc;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .signout-btn, .orders-btn {
+    color: white;
+    border: none;
+    padding: 10px 20px;
     border-radius: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for menu */
-    z-index: 1000; /* Ensure it appears above other elements */
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
   }
   
   .signout-btn {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #dc3545; /* Red color for sign out */
-    color: white;
-    cursor: pointer;
-    width: 100%; /* Full width */
+    background-color: #c82333; /* Updated color for Sign Out button */
   }
   
   .signout-btn:hover {
-    background-color: #c82333; /* Darker red on hover */
+    background-color: #a71d2a; /* Slightly darker shade for hover effect */
   }
+  
+  .orders-btn {
+    background-color: #28a745; /* Green color for the Your Orders button */
+  }
+  
+  .orders-btn:hover {
+    background-color: #218838;
+  }
+  
   
   .cart-preview ul {
     list-style-type: none; /* Remove default list styles */

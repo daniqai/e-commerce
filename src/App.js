@@ -6,6 +6,7 @@ import Checkout from './Checkout/Checkout';
 import Login from './Login';
 import CustomerList from './Customer/CustomerList';
 import ProtectedRoute from './components/ProtectedRoute';
+import Orders from './Checkout/Order';
 
 
 function App() {
@@ -37,6 +38,14 @@ function App() {
           element={
             <ProtectedRoute>
               <CustomerList />
+            </ProtectedRoute>
+          }
+        />
+         <Route
+          path="/orders"
+          element={
+            <ProtectedRoute>
+              <Orders />
             </ProtectedRoute>
           }
         />

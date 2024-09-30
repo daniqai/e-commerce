@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 import './Checkout.css';
 
@@ -19,9 +19,28 @@ const Checkout = () => {
       alert('Your order has been placed successfully using Cash on Delivery!');
     }
 
-    setCart([]); // Clear the cart
+    // Prepare order details
+    const newOrder = {
+      id: new Date().getTime(), // Unique ID based on timestamp
+      items: cart,
+      totalAmount: cart.reduce((acc, item) => acc + item.sellingPrice * item.quantity, 0),
+      paymentMethod,
+      date: new Date().toLocaleDateString(),
+    };
+
+    // Fetch existing orders for the user
+    const existingOrders = JSON.parse(localStorage.getItem(`orders_${userId}`)) || [];
+
+    // Save the new order along with existing orders
+    const updatedOrders = [...existingOrders, newOrder];
+    localStorage.setItem(`orders_${userId}`, JSON.stringify(updatedOrders));
+
+    // Clear the cart after placing the order
+    setCart([]);
     localStorage.removeItem(`cart_${userId}`); // Clear cart from localStorage using user-specific key
-    navigate('/login'); // Redirect back to the homepage
+
+    // Redirect to the Orders page to view the placed order
+    navigate('/orders');
   };
 
   return (
