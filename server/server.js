@@ -6,8 +6,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
-const SECRET_KEY = 'your_secret_key'; // Use a more secure key in production
+const PORT =  5000;
+const SECRET_KEY = '121314'; 
 
 app.use(bodyParser.json());
 app.use(cors({
@@ -18,22 +18,7 @@ app.use(cors({
 // Simulated user database (in-memory)
 const users = [];
 
-// JWT Authentication Middleware
-const authenticateJWT = (req, res, next) => {
-  const token = req.headers.authorization && req.headers.authorization.split(' ')[1];
-  
-  if (token) {
-    jwt.verify(token, SECRET_KEY, (err, user) => {
-      if (err) {
-        return res.sendStatus(403);
-      }
-      req.user = user;
-      next();
-    });
-  } else {
-    res.sendStatus(401);
-  }
-};
+
 
 // Signup route to register new users
 app.post('/signup', (req, res) => {
@@ -49,10 +34,8 @@ app.post('/signup', (req, res) => {
   const newUser = { id: uuidv4(), username, password, email };
   users.push(newUser);
 
-  // Generate a JWT token for the new user
-  const accessToken = jwt.sign({ id: newUser.id, username: newUser.username, email: newUser.email }, SECRET_KEY, { expiresIn: '1h' });
-
-  res.json({ accessToken });
+  
+  res.json({message: "Signed up successfully" });
 });
 
 // Login route to authenticate users and issue JWT token
@@ -71,13 +54,6 @@ app.post('/login', (req, res) => {
   }
 });
 
-// Protected route: Example of accessing protected data
-app.get('/profile', authenticateJWT, (req, res) => {
-  res.json({
-    message: 'This is a protected route',
-    user: req.user
-  });
-});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

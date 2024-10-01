@@ -57,8 +57,25 @@ const ProductList = () => {
   };
 
   const filteredProducts = products.filter((product) =>
-    product.name.toLowerCase().includes(filterKeyword.toLowerCase())
+    product.name.toLowerCase().includes(filterKeyword.toLowerCase())||product?.description?.toLowerCase()?.includes(filterKeyword.toLowerCase())
   );
+
+const decreaseQuantity = (productId) => {
+const updatedCart=  
+    cart
+      .map((item) =>
+        item.id === productId
+          ? {
+              ...item,
+              quantity: item.quantity > 1 ? item.quantity - 1 : 0,
+            }
+          : item
+      )
+      .filter((item) => item.quantity > 0) // Remove the item if quantity is 0
+      setCart(updatedCart);
+      localStorage.setItem(`cart_${userId}`, JSON.stringify(updatedCart));
+  
+};
 
   return (
     <div className="product-list">
@@ -151,9 +168,14 @@ const ProductList = () => {
                   <div className="cart-item-details">
                     {item.name} (x{item.quantity}) - ${item.sellingPrice * item.quantity}
                   </div>
-                  <button className="remove-btn" onClick={() => removeFromCart(item.id)}>
-                    Remove
-                  </button>
+                  <div className="cart-item-actions">
+        <button onClick={() => decreaseQuantity(item.id)} className="decrease-btn">
+          -
+        </button>
+        <button onClick={() => removeFromCart(item.id)} className="remove-btn">
+          Remove
+        </button>
+        </div>
                 </li>
               ))}
             </ul>

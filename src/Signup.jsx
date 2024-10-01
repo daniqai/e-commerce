@@ -1,7 +1,7 @@
 import React, { useState } from 'react'; 
 import axios from 'axios';
 import './Signup.css'; // Importing the CSS file
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Signup = () => {
   const [username, setUsername] = useState('');
@@ -15,19 +15,17 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/signup', {
+    await axios.post('http://localhost:5000/signup', {
         username,
         password,
         email
       });
 
-      // Save JWT token to localStorage
-      localStorage.setItem('token', response.data.accessToken);
-
       // Store signup details in localStorage
-      const newUser = { username, email, mobile, password };
+      const newUser = { username, email, mobile };
 
       // Retrieve existing users from localStorage
+     
       const users = JSON.parse(localStorage.getItem('users')) || [];
       
       // Add the new user to the list

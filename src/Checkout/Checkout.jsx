@@ -27,9 +27,9 @@ const Checkout = () => {
       paymentMethod,
       date: new Date().toLocaleDateString(),
     };
-
     // Fetch existing orders for the user
     const existingOrders = JSON.parse(localStorage.getItem(`orders_${userId}`)) || [];
+    
 
     // Save the new order along with existing orders
     const updatedOrders = [...existingOrders, newOrder];
